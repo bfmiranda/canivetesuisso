@@ -49,7 +49,7 @@ show_menu() {
     echo "4. Install Apache Maven"
     echo "5. Install Quarkus CLI"
     echo "6. Run all steps"
-    echo "9999 - Instalar redis
+    echo "9999 - Instalar redis"
     echo "7. Exit"
 }
 
