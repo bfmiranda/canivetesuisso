@@ -34,7 +34,8 @@ install_maven() {
 # Function to install Quarkus CLI
 install_quarkus() {
     echo "Installing Quarkus CLI..."
-    curl -Ls https://sh.jbang.dev | bash -s - app setup
+    curl -Ls https://sh.jbang.dev | bash -s - trust add https://repo1.maven.org/maven2/io/quarkus/quarkus-cli/
+    curl -Ls https://sh.jbang.dev | bash -s - app install --fresh --force quarkus@quarkusio
     curl -Ls https://sh.jbang.dev | bash -s - app install quarkus
     echo "Verifying Quarkus installation..."
     quarkus --version
