@@ -23,6 +23,14 @@ install_java() {
     java -version
 }
 
+# Function to install Java JRE 11
+install_jre() {
+    echo "Installing Java JRE 11..."
+    sudo apt-get install -y default-jre
+    echo "Verifying Java installation..."
+    java -version
+}
+
 # Function to install Apache Maven
 install_maven() {
     echo "Installing Apache Maven..."
@@ -57,7 +65,7 @@ show_menu() {
 # Main script logic
 while true; do
     show_menu
-    read -p "Enter your choice [1-7]: " choice
+    read -p "Enter your choice [1-8]: " choice
 
     case $choice in
         1) update_package_list ;;
@@ -65,14 +73,16 @@ while true; do
         3) install_java ;;
         4) install_maven ;;
         5) install_quarkus ;;
-        6) 
+        6) install_jre ;;
+        7) 
             update_package_list
             install_prerequisites
             install_java
+            install_jre
             install_maven
             install_quarkus
             ;;
-        7) echo "Exiting..."; exit 0 ;;
+        8) echo "Exiting..."; exit 0 ;;
         *) echo "Invalid choice. Please enter a number between 1 and 7." ;;
     esac
 done

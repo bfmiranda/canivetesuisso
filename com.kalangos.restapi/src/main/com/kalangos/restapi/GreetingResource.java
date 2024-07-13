@@ -1,4 +1,4 @@
-package org.acme;
+package canivetesuisso.com.kalangos.restapi.com.kalangos.restapi;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
